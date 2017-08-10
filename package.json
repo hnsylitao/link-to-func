@@ -1,6 +1,6 @@
 {
   "name": "link-to-func",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "router link to function",
   "main": "build/index.js",
   "scripts": {
