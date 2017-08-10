@@ -1,6 +1,6 @@
 # link-to-func
 
-react router link to function
+router link to function
 
 ```
 npm install link-to-func
