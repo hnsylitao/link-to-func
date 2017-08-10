@@ -10,8 +10,7 @@ var argumentsToArray = function argumentsToArray(args) {
 var linkReplace = function linkReplace() {
   var absPath = arguments[0];
   var settingLink = arguments[1];
-  var settingArgs = argumentsToArray(arguments, 2);
-  settingArgs = settingArgs.length ? settingArgs : settingLink.match(/(:.*?)(?=[\/\(]|$)|(\(\/:.*?)\)/ig) || [];
+  var settingArgs = settingLink.match(/(:.*?)(?=[\/\(]|$)|(\(\/:.*?)\)/ig) || [];
   var _replaceLink = function _replaceLink(args) {
     var link = settingLink;
 
@@ -63,18 +62,10 @@ var linkReplace = function linkReplace() {
 };
 
 var Replace = function Replace(link) {
-  for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    args[_key - 1] = arguments[_key];
-  }
-
-  return linkReplace.apply(null, ['', link].concat(args));
+  return linkReplace(false, link);
 };
 Replace.absPath = function (absPath, link) {
-  for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
-    args[_key2 - 2] = arguments[_key2];
-  }
-
-  return linkReplace.apply(null, [absPath, link].concat(args));
+  return linkReplace(absPath, link);
 };
 
 exports['default'] = Replace;
