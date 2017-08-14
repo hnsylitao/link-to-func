@@ -38,7 +38,7 @@ console.log(newsDetail2.getLink());// /home/news(/:id)
 ```
 
 ### brwoser
-``` js
+``` html
 <script src="index.min.js" type="text/javascript" />
 <script type=""text/javascript">
   var absPath = 'https://url.com';
@@ -64,4 +64,5 @@ console.log(newsDetail2.getLink());// /home/news(/:id)
   console.log(newsDetail1.getLink());// /home/news/detail/:id
   console.log(newsDetail2.getLink());// /home/news(/:id)
 </script>
+
 ```
