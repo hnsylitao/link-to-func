@@ -37,7 +37,7 @@ console.log(newsDetail2.getLink());// /home/news(/:id)
 
 ```
 
-### brwoser
+### browser
 ``` html
 <script src="index.min.js" type="text/javascript" />
 <script type=""text/javascript">
