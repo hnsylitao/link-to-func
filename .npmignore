@@ -5,3 +5,5 @@ node_modules
 src
 .babelrc
 test.js
+webpack.config.js
+build/index.js
