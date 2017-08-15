@@ -1,4 +1,4 @@
-# link-to-func
+# link-to-func [demo](https://codepen.io/hnsylitao/pen/qXPvVN)
 
 router link to function
 
