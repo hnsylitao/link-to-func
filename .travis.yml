@@ -1,0 +1,14 @@
+language: node_js
+
+node_js:  
+  - "iojs"
+  - "7"
+
+notifications:
+  email: true
+
+before_install: npm install -g webpack
+install: npm install --dev
+
+script:
+  - npm run build
