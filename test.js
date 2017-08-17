@@ -1,24 +1,50 @@
-var replace = require('./build/index')
+var linkToFunc = require('./build/index')
+var tape = require('tape')
 
-var absPath = 'https://url.com';
+tape('basic', function (t) {
+  var product = linkToFunc('/home/product(/:productId)')
+  var productList = linkToFunc('/home/product')
+  var productDetail = linkToFunc('/home/product/:id')
 
-var newsList = replace.absPath(absPath, '/home/news/list');
-var newsDetail1 = replace.absPath(absPath, '/home/news/detail/:id');
-var newsDetail2 = replace.absPath(absPath, '/home/news(/:id)');
+  t.equal(product(), '/home/product')
+  t.equal(product(10000), '/home/product/10000')
+  t.equal(productList(), '/home/product')
+  t.equal(productDetail(10000), '/home/product/10000')
+  t.end()
+})
 
-//basic
-console.log(newsList()); // /home/news/list
-console.log(newsDetail1(1));// /home/news/detail/1
-console.log(newsDetail2());// /home/news
-console.log(newsDetail2(1));// /home/news/1
+tape('getLink', function (t) {
+  var product = linkToFunc('/home/product(/:productId)')
+  var productList = linkToFunc('/home/product')
+  var productDetail = linkToFunc('/home/product/:id')
 
-//toAbsPath
-console.log(newsList.toAbsPath());// https://url.com/home/news/list
-console.log(newsDetail1.toAbsPath(1));// https://url.com/home/news/detail/1
-console.log(newsDetail2.toAbsPath());// https://url.com/home/news
-console.log(newsDetail2.toAbsPath(1));// https://url.com/home/news/1
+  t.equal(product.getLink(), '/home/product(/:productId)')
+  t.equal(productList.getLink(), '/home/product')
+  t.equal(productDetail.getLink(), '/home/product/:id')
+  t.end()
+})
 
-//getLink
-console.log(newsList.getLink());// /home/news/list
-console.log(newsDetail1.getLink());// /home/news/detail/:id
-console.log(newsDetail2.getLink());// /home/news(/:id)
+tape('toString', function (t) {
+  var product = linkToFunc('/home/product(/:productId)')
+  var productList = linkToFunc('/home/product')
+  var productDetail = linkToFunc('/home/product/:id')
+
+  t.equal(product.toString(), '/home/product')
+  t.equal(product.toString(10000), '/home/product/10000')
+  t.equal(productList.toString(), '/home/product')
+  t.equal(productDetail.toString(10000), '/home/product/10000')
+  t.end()
+})
+
+tape('absPath', function (t) {
+  var url = 'http://url.com';
+  var product = linkToFunc.absPath(url, '/home/product(/:productId)')
+  var productList = linkToFunc.absPath(url, '/home/product')
+  var productDetail = linkToFunc.absPath(url, '/home/product/:id')
+
+  t.equal(product.toAbsPath(), 'http://url.com/home/product')
+  t.equal(product.toAbsPath(10000), 'http://url.com/home/product/10000')
+  t.equal(productList.toAbsPath(), 'http://url.com/home/product')
+  t.equal(productDetail.toAbsPath(10000), 'http://url.com/home/product/10000')
+  t.end()
+})
