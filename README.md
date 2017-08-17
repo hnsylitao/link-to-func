@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/hnsylitao/link-to-func.svg?branch=master)](https://travis-ci.org/hnsylitao/link-to-func)
 # link-to-func [demo](https://codepen.io/hnsylitao/pen/qXPvVN)
 
 router link to function
