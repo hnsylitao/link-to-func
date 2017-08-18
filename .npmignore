@@ -7,3 +7,7 @@ src
 test.js
 webpack.config.js
 build/index.js
+
+#travis codecov
+.travis.yml
+codecov.yml
