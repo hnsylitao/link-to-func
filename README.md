@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/hnsylitao/link-to-func.svg?branch=master)](https://travis-ci.org/hnsylitao/link-to-func)
+[![codecov](https://codecov.io/gh/hnsylitao/link-to-func/branch/master/graph/badge.svg)](https://codecov.io/gh/hnsylitao/link-to-func)
 [![Version](https://img.shields.io/npm/v/link-to-func.svg?style=flat)](https://www.npmjs.com/package/link-to-func)
 [![NPM](https://img.shields.io/npm/dt/link-to-func.svg?style=flat)](https://www.npmjs.com/package/link-to-func)
 [![LICENSE](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/hnsylitao/link-to-func/blob/master/LICENSE)
