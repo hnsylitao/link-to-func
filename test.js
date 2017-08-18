@@ -1,4 +1,4 @@
-var linkToFunc = require('./build/index.min')
+var linkToFunc = require('./build/index')
 var tape = require('tape')
 
 tape('basic', function (t) {
