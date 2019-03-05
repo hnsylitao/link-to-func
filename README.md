@@ -45,8 +45,9 @@ console.log(newsDetail2.getLink());// /home/news(/:id)
 
 ### browser
 ``` html
+
 <script src="https://unpkg.com/link-to-func/build/index.min.js" type="text/javascript" />
-<script type=""text/javascript">
+<script type="text/javascript">
   var absPath = 'https://url.com';
 
   var newsList = linkToFunc.absPath(absPath, '/home/news/list');
